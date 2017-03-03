@@ -5,26 +5,6 @@ import random
 import sys
 import time
 
-def countComparison():
-    """Creates count.txt which counts the number of distances calculated.
-    """
-    try:
-        file = open("count.txt", "r")
-    except:
-        file = open("count.txt", "w")
-        file.write("0")
-        file.close()
-        file = open("count.txt", "r")
-
-    text = file.readline()
-    count = int(text) + 1
-    file.close()
-    file = open("count.txt", "w")
-    file.write(str(count))
-    file.close()
-
-
-
 def distance(dot1, dot2):
     """Calculates the distance between two points in R^2.
     
@@ -32,7 +12,6 @@ def distance(dot1, dot2):
     dot1 -- A point, an ordered pair e.g. [x,y].
     dot2 -- See dot1.
     """
-    #countComparison()
     return math.sqrt(math.pow(dot1[0]-dot2[0], 2) + math.pow(dot1[1]-dot2[1],2))
 
 
